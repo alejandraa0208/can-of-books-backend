@@ -19,11 +19,9 @@ app.get('/test', (request, response) => {
 
 })
 
-app.listen(PORT, () => console.log(`listening on ${PORT}`));
-
 app.get('/books', async (request, response) => {
   try {
-    let documents = await BookModel.find ({});
+    let documents = await BookModel.find({});
     response.json(documents);
   } catch (e) {
     console.log('Books not loading', e);
