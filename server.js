@@ -29,4 +29,39 @@ app.get('/books', async (request, response) => {
   }
 });
 
+app.post('/books', async (request, reponse) => {
+  try {
+    const { title, description, status } = request.body;
+
+    const newBook = new BookModel({
+      title,
+      description,
+      status,
+    });
+
+    const savedBook = await newBook.save();
+    response.status(201).json(savedBook);
+  } catch (e) {
+    console.log('Error creating book', e);
+    response.status(500).send(e);
+  }
+});
+
+app.delete('/books/:id', async (request, response) => {
+  try {
+    const bookId = request.params.id;
+
+    const deletedBook = await BookModel.findByIdAndDelete(bookId);
+
+    if (deletedBook) {
+      response.json({ message: 'Book successfully deleted'});
+    } else {
+      response.status(404).json({ message: 'Book not found'});
+    }
+  } catch (e) {
+    console.log('Error deleting book', e);
+    response.status(500).send(e);
+  }
+});
+
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
