@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const BookModel = require('./BookModel.js');
 const MONGODB_URL = process.env.MONGODB_URL;
 
+console.log(MONGODB_URL);
 mongoose.connect(MONGODB_URL);
 
 const book1 = new BookModel({
