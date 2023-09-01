@@ -3,7 +3,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const authorize = require('./auth/authorize.js');
+const authorize = require('./authorize.js');
 const mongoose = require('mongoose');
 const BookModel = require('./BookModel.js');
 const PORT = process.env.PORT || 3001;
