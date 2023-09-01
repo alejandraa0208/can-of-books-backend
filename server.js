@@ -10,6 +10,7 @@ const MONGODB_URL = process.env.MONGODB_URL;
 
 const app = express();
 app.use(cors());
+app.use(authorize);
 
 mongoose.connect(MONGODB_URL);
 
