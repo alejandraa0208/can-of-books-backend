@@ -31,7 +31,7 @@ app.get('/books', async (request, response) => {
   }
 });
 
-app.post('/books', async (request, reponse) => {
+app.post('/books', async (request, response) => {
   try {
     const { title, description, status } = request.body;
 
