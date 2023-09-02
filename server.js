@@ -3,9 +3,9 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const authorize = require('./authorize.js');
+const authorize = require('./src/auth/authorize.js');
 const mongoose = require('mongoose');
-const BookModel = require('./BookModel.js');
+const BookModel = require('./src/BookModel.js');
 const PORT = process.env.PORT || 3001;
 const MONGODB_URL = process.env.MONGODB_URL;
 
