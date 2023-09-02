@@ -2,7 +2,7 @@
 
 require('dotenv').config();
 const mongoose = require('mongoose');
-const BookModel = require('./BookModel.js');
+const BookModel = require('./src/BookModel.js');
 const MONGODB_URL = process.env.MONGODB_URL;
 
 console.log(MONGODB_URL);
